@@ -1,0 +1,46 @@
+{
+  "name": "@subcode/sentinel",
+  "version": "1.0.0",
+  "description": "Secure secret management for AI agents with intent-based access control",
+  "main": "src/server.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/server.ts",
+    "dev": "bun --watch src/server.ts",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "lint": "echo 'Linting not configured yet'",
+    "format": "echo 'Formatting not configured yet'",
+    "type-check": "echo 'Type checking not configured yet'",
+    "build": "echo 'Build not required for Bun runtime'"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "secrets",
+    "vault",
+    "security",
+    "access-control",
+    "audit",
+    "human-in-the-loop"
+  ],
+  "author": "SubCode Ventures",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subcode-ventures/sentinel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/subcode-ventures/sentinel/issues"
+  },
+  "homepage": "https://sentinel.subcode.ventures",
+  "dependencies": {
+    "hono": "latest"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  }
+}

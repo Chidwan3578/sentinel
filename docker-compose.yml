@@ -1,0 +1,104 @@
+version: '3.8'
+
+services:
+  sentinel:
+    image: oven/bun:latest
+    container_name: sentinel
+    working_dir: /app
+    command: bun run src/server.ts
+    
+    ports:
+      - "3000:3000"
+    
+    volumes:
+      # Mount source code
+      - ./src:/app/src:ro
+      
+      # Mount package.json and lock file
+      - ./package.json:/app/package.json:ro
+      - ./bun.lockb:/app/bun.lockb:ro
+      
+      # Persistent database volume
+      - sentinel-data:/app/data
+      
+      # Logs volume
+      - sentinel-logs:/app/logs
+    
+    environment:
+      # Server configuration
+      - NODE_ENV=development
+      - PORT=3000
+      - HOST=0.0.0.0
+      
+      # API authentication
+      - SENTINEL_API_TOKEN=sentinel_dev_key
+      
+      # Database location
+      - DB_PATH=/app/data/sentinel.db
+      
+      # Logging
+      - LOG_LEVEL=info
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    
+    # Resource limits (adjust based on your needs)
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+    
+    # Restart policy
+    restart: unless-stopped
+    
+    # Network
+    networks:
+      - sentinel-network
+
+  # Optional: Admin CLI interface (coming soon)
+  # sentinel-cli:
+  #   image: oven/bun:latest
+  #   container_name: sentinel-cli
+  #   working_dir: /app
+  #   volumes:
+  #     - ./cli:/app
+  #   depends_on:
+  #     - sentinel
+  #   networks:
+  #     - sentinel-network
+
+volumes:
+  # Persistent database storage
+  sentinel-data:
+    driver: local
+  
+  # Log storage
+  sentinel-logs:
+    driver: local
+
+networks:
+  sentinel-network:
+    driver: bridge
+
+# Production deployment notes:
+# 
+# 1. Change SENTINEL_API_TOKEN to a strong random value
+# 2. Use environment files (.env) instead of inline environment variables
+# 3. Mount /app/data to a backed-up volume
+# 4. Set up log rotation for /app/logs
+# 5. Use a reverse proxy (nginx/Caddy) for HTTPS termination
+# 6. Consider using Postgres instead of SQLite for multi-instance deployments
+# 7. Enable monitoring with Prometheus/Grafana
+# 8. Set appropriate resource limits based on load testing
+#
+# Example production override:
+# docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d

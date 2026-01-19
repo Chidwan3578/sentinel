@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel - Secret Management for AI Agents</title>
+    <meta name="description" content="Open-source secret management built for autonomous AI agents. Intent-based access, human-in-the-loop approvals, comprehensive audit logging.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-icon">🛡️</span>
+                    <span class="logo-text">Sentinel</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="https://github.com/subcode-ventures/sentinel" target="_blank">GitHub</a>
+                    <a href="#contact" class="btn-secondary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Secret Management<br/>Built for AI Agents</h1>
+                <p class="hero-subtitle">
+                    Open-source platform that understands autonomous agents need secrets differently.
+                    Intent-based access, human approvals, complete audit trails.
+                </p>
+                <div class="hero-cta">
+                    <a href="https://github.com/subcode-ventures/sentinel" class="btn-primary" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                        Download CE
+                    </a>
+                    <a href="#pricing" class="btn-outline">Try Cloud Free</a>
+                </div>
+                <div class="hero-code">
+                    <pre><code><span class="code-comment">// Agents request secrets with intent</span>
+<span class="code-keyword">const</span> secret = <span class="code-keyword">await</span> sentinel.<span class="code-method">request</span>({
+  <span class="code-property">secret</span>: <span class="code-string">'stripe_api_key'</span>,
+  <span class="code-property">intent</span>: <span class="code-string">'Process refund for order #12345'</span>,
+  <span class="code-property">approver</span>: <span class="code-string">'human-ops-team'</span>
+});
+
+<span class="code-comment">// Human approves or denies with full context</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2>AI Agents Need Secrets Differently</h2>
+                <p>Traditional secret managers were built for humans and CI/CD. Autonomous agents have unique requirements.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">❌</div>
+                    <h3>The Old Way</h3>
+                    <ul>
+                        <li>Agent gets all-or-nothing access</li>
+                        <li>No context on WHY secrets are accessed</li>
+                        <li>Approve agents, not actions</li>
+                        <li>Audit logs just show "accessed"</li>
+                    </ul>
+                </div>
+                <div class="problem-card highlight">
+                    <div class="problem-icon">✓</div>
+                    <h3>The Sentinel Way</h3>
+                    <ul>
+                        <li>Just-in-time access requests</li>
+                        <li>Agents explain intent in plain English</li>
+                        <li>Approve specific actions, not agents</li>
+                        <li>Full audit trail with reasoning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built for Autonomous Agents</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Intent-Based Access</h3>
+                    <p>Agents request secrets with natural language explanations. You see WHY before approving WHAT.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👤</div>
+                    <h3>Human-in-the-Loop</h3>
+                    <p>Critical operations require human approval. Async workflows via Slack, email, or API webhooks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Comprehensive Auditing</h3>
+                    <p>Every request logged with full context: agent identity, intent, approval chain, and usage timestamps.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Zero-Trust Architecture</h3>
+                    <p>No standing privileges. Secrets are ephemeral and scoped to specific operations with TTLs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Simple Integration</h3>
+                    <p>TypeScript SDK with 3 lines of code. Works with OpenAI, Anthropic, LangChain, and custom agents.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Rotation & Revocation</h3>
+                    <p>Automated secret rotation. Instant revocation when agents misbehave or complete tasks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="integration">
+        <div class="container">
+            <div class="integration-content">
+                <div class="integration-text">
+                    <h2>Integration in Minutes</h2>
+                    <p>Drop-in replacement for environment variables and secret managers. Works with any agent framework.</p>
+                    <ul class="integration-list">
+                        <li>✓ OpenAI Assistants & GPTs</li>
+                        <li>✓ Anthropic Claude with MCP</li>
+                        <li>✓ LangChain & LangGraph</li>
+                        <li>✓ AutoGen & CrewAI</li>
+                        <li>✓ Custom agent frameworks</li>
+                    </ul>
+                </div>
+                <div class="integration-code">
+                    <pre><code><span class="code-comment">// Install</span>
+npm install @sentinel/sdk
+
+<span class="code-comment">// Initialize</span>
+<span class="code-keyword">import</span> { Sentinel } <span class="code-keyword">from</span> <span class="code-string">'@sentinel/sdk'</span>;
+
+<span class="code-keyword">const</span> sentinel = <span class="code-keyword">new</span> <span class="code-method">Sentinel</span>({
+  <span class="code-property">agentId</span>: <span class="code-string">'customer-support-bot'</span>,
+  <span class="code-property">apiKey</span>: process.env.<span class="code-property">SENTINEL_KEY</span>
+});
+
+<span class="code-comment">// Request with intent</span>
+<span class="code-keyword">const</span> apiKey = <span class="code-keyword">await</span> sentinel.<span class="code-method">get</span>({
+  <span class="code-property">key</span>: <span class="code-string">'STRIPE_SECRET'</span>,
+  <span class="code-property">intent</span>: <span class="code-string">'Refund order #12345 - customer complaint'</span>
+});
+
+<span class="code-comment">// Use secret (automatically revoked after use)</span>
+<span class="code-keyword">await</span> stripe.refunds.<span class="code-method">create</span>({ apiKey });</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Deployment</h2>
+                <p>Start free, scale as you grow</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Community Edition</h3>
+                        <div class="price">
+                            <span class="price-amount">Free</span>
+                        </div>
+                        <p class="price-desc">Self-hosted, MIT licensed</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Unlimited agents & secrets</li>
+                        <li>✓ Intent-based access control</li>
+                        <li>✓ Human approval workflows</li>
+                        <li>✓ Audit logging</li>
+                        <li>✓ TypeScript SDK</li>
+                        <li>✓ Community support</li>
+                        <li>✓ Deploy anywhere (Docker, K8s)</li>
+                    </ul>
+                    <a href="https://github.com/subcode-ventures/sentinel" class="btn-card" target="_blank">Download on GitHub</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Cloud</h3>
+                        <div class="price">
+                            <span class="price-amount">$49</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <p class="price-desc">Managed hosting, generous free tier</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Everything in Community</li>
+                        <li>✓ Hosted & managed for you</li>
+                        <li>✓ Slack/Discord integrations</li>
+                        <li>✓ Advanced analytics dashboard</li>
+                        <li>✓ 99.9% uptime SLA</li>
+                        <li>✓ Email support (24hr response)</li>
+                        <li>✓ Free tier: 10 agents, 100 requests/day</li>
+                    </ul>
+                    <a href="#contact" class="btn-card primary">Try Free</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">
+                            <span class="price-amount">$2,000+</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <p class="price-desc">Self-hosted premium features</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Everything in Cloud</li>
+                        <li>✓ Self-hosted on your infrastructure</li>
+                        <li>✓ SSO/SAML integration</li>
+                        <li>✓ Custom approval workflows</li>
+                        <li>✓ Advanced RBAC & policies</li>
+                        <li>✓ Dedicated support + Slack channel</li>
+                        <li>✓ SLA & professional services</li>
+                    </ul>
+                    <a href="#contact" class="btn-card">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by AI-First Teams</h2>
+            </div>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-quote">"Finally, a secret manager that understands our agent fleet needs context-aware access, not just API keys."</p>
+                    <div class="testimonial-author">
+                        <strong>Engineering Lead</strong>
+                        <span>AI Automation Startup</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-quote">"The intent logging is a game-changer. We can see exactly why our agents requested each secret during incident reviews."</p>
+                    <div class="testimonial-author">
+                        <strong>Platform Security Team</strong>
+                        <span>Enterprise SaaS Company</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-quote">"Deployed in 20 minutes. Our compliance team loves the audit trail. Our agents barely noticed the change."</p>
+                    <div class="testimonial-author">
+                        <strong>CTO</strong>
+                        <span>ML Infrastructure Platform</span>
+                    </div>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number" id="github-stars">1.2k+</div>
+                    <div class="stat-label">GitHub Stars</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Production Deployments</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">10M+</div>
+                    <div class="stat-label">Secrets Managed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Secure Your Agent Fleet?</h2>
+                <p>Start with Community Edition or try Cloud free for 14 days. No credit card required.</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/subcode-ventures/sentinel" class="btn-primary" target="_blank">Download Community Edition</a>
+                    <a href="mailto:sales@subcode.ventures?subject=Sentinel Cloud Trial" class="btn-outline">Start Cloud Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">🛡️</span>
+                        <span class="logo-text">Sentinel</span>
+                    </div>
+                    <p>Secret management built for AI agents</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="https://github.com/subcode-ventures/sentinel" target="_blank">Documentation</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="https://subcode.ventures">About SubCode Ventures</a>
+                    <a href="mailto:hello@subcode.ventures">Contact</a>
+                    <a href="https://github.com/subcode-ventures/sentinel" target="_blank">GitHub</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="https://github.com/subcode-ventures/sentinel/blob/main/LICENSE" target="_blank">MIT License</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SubCode Ventures. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Simple nav background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
